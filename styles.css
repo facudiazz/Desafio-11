@@ -22,7 +22,7 @@ body {
   display: grid;
   width: 100%;
   gap: 0.5rem;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
 }
 
 .pantalla {
@@ -36,6 +36,7 @@ body {
   font-family: monospace;
   font-weight: 600;
   height: 200px;
+  border-radius: 1rem;
 
   display: flex;
   justify-content: flex-end;
@@ -60,7 +61,6 @@ body {
 }
 
 #cero {
-  grid-column: span 2;
   margin: 0.5rem;
   border-radius: 1rem;
 }
@@ -96,27 +96,52 @@ body {
   background-color: #ff4d5a;
 }
 
+#cambiar-modo {
+  background-color: #27292E;
+  color: white; 
+  border: none;
+  padding: 1.5rem 0.5rem;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace;
+}
+
+#cambiar-modo:hover {
+  background-color: #1a1b1f; 
+  cursor: pointer;
+}
+
 #c, #div, #multp, #mas, #menos, #borrar {
-    background-image: radial-gradient(
-        circle at 50% -20.71%,
-        #de9c2c 0,
-        #e5922a 8.33%,
-        #ea852b 16.67%,
-        #ee772d 25%,
-        #f16731 33.33%,
-        #f35436 41.67%,
-        #f23c3c 50%,
-        #f01843 58.33%,
-        #ed004c 66.67%,
-        #e90057 75%,
-        #e30064 83.33%,
-        #db0071 91.67%,
-        #d10080 100%
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    transition: background-color 0.3s; 
+  background-image: radial-gradient(
+    circle at 50% -20.71%,
+    #de9c2c 0,
+    #e5922a 8.33%,
+    #ea852b 16.67%,
+    #ee772d 25%,
+    #f16731 33.33%,
+    #f35436 41.67%,
+    #f23c3c 50%,
+    #f01843 58.33%,
+    #ed004c 66.67%,
+    #e90057 75%,
+    #e30064 83.33%,
+    #db0071 91.67%,
+    #d10080 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: background-color 0.3s, color 0.3s; 
+}
+
+#c:hover, #div:hover, #multp:hover, #mas:hover, #menos:hover, #borrar:hover {
+  color: white;
+  background-image: none;
+  background-color: #212327;
+  -webkit-background-clip: initial; 
+  background-clip: initial; 
 }
 
 .phone {

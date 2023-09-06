@@ -1,12 +1,11 @@
 const pantalla = document.querySelector('.pantalla');
 const botones = document.querySelectorAll('.btn');
 
-botones.forEach(boton => {
+pantalla.addEventListener('click', () => {
+    pantalla.textContent = '0';
+});
 
-    pantalla.addEventListener('click', () => {
-        pantalla.textContent = '0';
-    })
-    
+botones.forEach(boton => {
     boton.addEventListener('click', () => {
         const botonApretado = boton.textContent;
 
@@ -27,25 +26,38 @@ botones.forEach(boton => {
 
         if (boton.id === 'igual') {
             try {
-                pantalla.textContent = eval(pantalla.textContent);
+                let resultado = eval(pantalla.textContent);
+                resultado = resultado.toString().slice(0, 13); 
+                pantalla.textContent = resultado;
                 return;
-            }
-            catch {
+            } catch {
                 pantalla.textContent = 'Error';
                 return;
             }
-
         }
 
         if (pantalla.textContent === '0' || pantalla.textContent === 'Error') {
             pantalla.textContent = botonApretado;
         } else {
-        pantalla.textContent += botonApretado;
+            if (pantalla.textContent.length < 13) {
+                pantalla.textContent += botonApretado;
+            }
         }
+    });
+});
 
-        if (pantalla.textContent.length > 13) {
-            pantalla.textContent = 'Error';
-            return;
-        }
-    })
-})
+const cambiarModo = document.getElementById('cambiar-modo');
+const stylesClaro = document.getElementById('styles-claro');
+let modoClaroActivado = false;
+
+cambiarModo.addEventListener('click', () => {
+    modoClaroActivado = !modoClaroActivado;
+
+    if (modoClaroActivado) {
+        stylesClaro.removeAttribute('disabled');
+        cambiarModo.textContent = '🌙';
+    } else {
+        stylesClaro.setAttribute('disabled', 'true');
+        cambiarModo.textContent = '🔆';
+    }
+});
