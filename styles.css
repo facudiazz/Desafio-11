@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #212327;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+  place-items: center;
+}
+
+.calculadora {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: #27292E;
+  color: white;
+  display: grid;
+  width: 100%;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.pantalla {
+  grid-column: 1 / -1;
+  background-color: #212327;
+  padding: 1.5rem;
+  font-size: 2rem;
+  text-align: right;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-family: monospace;
+  font-weight: 600;
+  height: 200px;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.btn {
+  background-color: #27292E;
+  color: white;
+  border: none;
+  padding: 1.5rem 0.5rem;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace;
+}
+
+.btn:hover {
+  background-color: #212327;
+  cursor: pointer;
+}
+
+#cero {
+  grid-column: span 2;
+  margin: 0.5rem;
+  border-radius: 1rem;
+}
+
+#cero:hover {
+  background-color: #e65766;
+}
+
+#igual {
+  grid-row: span 2;
+  background-image: radial-gradient(
+    circle at 50% -20.71%,
+    #de9c2c 0,
+    #e5922a 8.33%,
+    #ea852b 16.67%,
+    #ee772d 25%,
+    #f16731 33.33%,
+    #f35436 41.67%,
+    #f23c3c 50%,
+    #f01843 58.33%,
+    #ed004c 66.67%,
+    #e90057 75%,
+    #e30064 83.33%,
+    #db0071 91.67%,
+    #d10080 100%
+  );
+  border-radius: 1rem;
+  margin: 0.5rem;
+  font-size: 1.5rem;
+}
+
+#igual:hover {
+  background-color: #ff4d5a;
+}
+
+#c, #div, #multp, #mas, #menos, #borrar {
+    background-image: radial-gradient(
+        circle at 50% -20.71%,
+        #de9c2c 0,
+        #e5922a 8.33%,
+        #ea852b 16.67%,
+        #ee772d 25%,
+        #f16731 33.33%,
+        #f35436 41.67%,
+        #f23c3c 50%,
+        #f01843 58.33%,
+        #ed004c 66.67%,
+        #e90057 75%,
+        #e30064 83.33%,
+        #db0071 91.67%,
+        #d10080 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: background-color 0.3s; 
+}
+
+.phone {
+    background-color: #000;
+    border: 16px solid #000000;
+    border-top-width: 40px;
+    border-bottom-width: 60px;
+    border-radius: 30px;
+    width: 350px;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    height: 700px; 
+    margin: 3rem;
+}
+
+.phone:before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 5px;
+    background: #333;
+    border-radius: 50%;
+}
+
+.phone:after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 8px;
+    background: #333;
+    border-radius: 50%;
+}
